@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "b010f7b5-681e-4b9f-8022-f05c959f6417",
+		"name": "knovator-demo-pramay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25699343",
+		"_collection_link": "https://pro-devs.postman.co/workspace/local-workspace~df9fdfc6-0f62-4f45-80ca-9b46ffcc518a/collection/25699343-b010f7b5-681e-4b9f-8022-f05c959f6417?action=share&creator=25699343&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}role",
+							"host": [
+								"{{local}}role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}role",
+							"host": [
+								"{{local}}role"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"user02\",\n    \"email\": \"user02@yopmail.com\",\n    \"password\": \"123\",\n    \"age\": 12,\n    \"roleId\": \"64c24e22263a83092811bb46\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}user/signup",
+							"host": [
+								"{{local}}user"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user02@yopmail.com\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}user/login",
+							"host": [
+								"{{local}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgwMzBhNjg3MmNhNTQzODAzNzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTA0NTgzOTB9.iRRooFk9Ohoxt8yNWndtj92mllVPRpHjKkGPiA_DiFo",
+								"description": "admin",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgxMDBhNjg3MmNhNTQzODAzN2IiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MDQ1ODQ3Nn0.BRZxf1rnRc9b0SLWJhbjfLdWwPnQ6g38o4RR3yyW8Pg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}user/get?_id=64c34af82053ca86ff91fc67",
+							"host": [
+								"{{local}}user"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "64c34af82053ca86ff91fc67"
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dashboard-count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgwMzBhNjg3MmNhNTQzODAzNzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTA0NTgzOTB9.iRRooFk9Ohoxt8yNWndtj92mllVPRpHjKkGPiA_DiFo",
+								"description": "admin",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgxMDBhNjg3MmNhNTQzODAzN2IiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MDQ1ODQ3Nn0.BRZxf1rnRc9b0SLWJhbjfLdWwPnQ6g38o4RR3yyW8Pg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}user/dashboard",
+							"host": [
+								"{{local}}user"
+							],
+							"path": [
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgxMDBhNjg3MmNhNTQzODAzN2IiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MDQ1ODQ3Nn0.BRZxf1rnRc9b0SLWJhbjfLdWwPnQ6g38o4RR3yyW8Pg",
+								"description": "user",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgwMzBhNjg3MmNhNTQzODAzNzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTA0NTgzOTB9.iRRooFk9Ohoxt8yNWndtj92mllVPRpHjKkGPiA_DiFo",
+								"description": "admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"my fourth new post\",\n    \"body\": \"my fourth new post body\",\n    \"long\": 70.99789947259235, \n    \"lat\": 20.716044159987234\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}post",
+							"host": [
+								"{{local}}post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-coordinates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgxMDBhNjg3MmNhNTQzODAzN2IiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MDQ1ODQ3Nn0.BRZxf1rnRc9b0SLWJhbjfLdWwPnQ6g38o4RR3yyW8Pg",
+								"description": "user",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgwMzBhNjg3MmNhNTQzODAzNzciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTA0NTgzOTB9.iRRooFk9Ohoxt8yNWndtj92mllVPRpHjKkGPiA_DiFo",
+								"description": "admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}post?long=72.83358343333319&lat=18.921790922707295&distance=1000",
+							"host": [
+								"{{local}}post"
+							],
+							"query": [
+								{
+									"key": "long",
+									"value": "72.83358343333319",
+									"description": "longitude"
+								},
+								{
+									"key": "lat",
+									"value": "18.921790922707295",
+									"description": "lattitude"
+								},
+								{
+									"key": "distance",
+									"value": "1000",
+									"description": "distance in kilometer"
+								},
+								{
+									"key": "_id",
+									"value": "64c3457cde30e4249fb13b46",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgxMDBhNjg3MmNhNTQzODAzN2IiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MDQ1ODQ3Nn0.BRZxf1rnRc9b0SLWJhbjfLdWwPnQ6g38o4RR3yyW8Pg",
+								"description": "user",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"my third new post 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}post/:_id",
+							"host": [
+								"{{local}}post"
+							],
+							"path": [
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "64c3457cde30e4249fb13b46"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGMyNTgxMDBhNjg3MmNhNTQzODAzN2IiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MDQ1ODQ3Nn0.BRZxf1rnRc9b0SLWJhbjfLdWwPnQ6g38o4RR3yyW8Pg",
+								"description": "user",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}post/:_id",
+							"host": [
+								"{{local}}post"
+							],
+							"path": [
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "64c3457cde30e4249fb13b46"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:33033/api/v1/",
+			"type": "string"
+		}
+	]
+}
